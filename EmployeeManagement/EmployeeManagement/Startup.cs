@@ -33,10 +33,13 @@ namespace EmployeeManagement
 				app.UseDeveloperExceptionPage();
 			}
 
+			app.UseDefaultFiles();
+			app.UseStaticFiles();
+
 			app.Run(async (context) =>
 			{
 				await context.Response
-				.WriteAsync(_config["MyKey"]);
+				.WriteAsync("Hello World!");
 			});
 		}
 	}
